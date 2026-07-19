@@ -19,18 +19,6 @@
 </head>
 
 <body>
-<div id="certificateGate" class="certificate-gate">
-    <div class="certificate-gate-card">
-        <p class="section-label">Private Section</p>
-        <h2>Certificates Access</h2>
-        <p>Please enter the password to view certificates.</p>
-        <input type="password" id="certificatePassword" placeholder="Enter password" />
-        <button type="button" id="certificateUnlockBtn">Unlock</button>
-        <p id="certificateError" class="certificate-error" aria-live="polite"></p>
-    </div>
-</div>
-
-<div id="certificateContent" class="certificate-content hidden">
 <header class="site-header">
     <nav class="navbar container">
         <a href="index.html" class="logo">
@@ -87,13 +75,13 @@
                             Red Team Leaders
                         </p>
 
-                        <a
-                            href="assets/certificates/certified-cybersecurity-educator-professional.pdf"
-                            class="certificate-button"
-                            target="_blank"
+                        <button
+                            type="button"
+                            class="certificate-button view-cert"
+                            data-href="assets/certificates/certified-cybersecurity-educator-professional.pdf"
                         >
                             View Certificate
-                        </a>
+                        </button>
                     </article>
 
                     <article class="certificate-card">
@@ -109,13 +97,13 @@
                             AFRALTI in partnership with GTMI
                         </p>
 
-                        <a
-                            href="assets/certificates/cyberops-associate.pdf"
-                            class="certificate-button"
-                            target="_blank"
+                        <button
+                            type="button"
+                            class="certificate-button view-cert"
+                            data-href="assets/certificates/cyberops-associate.pdf"
                         >
                             View Certificate
-                        </a>
+                        </button>
                     </article>
 
                     <article class="certificate-card">
@@ -131,13 +119,13 @@
                             Ramsys Info Tech Ghana
                         </p>
 
-                        <a
-                            href="assets/certificates/virtualization-cloud-computing.pdf"
-                            class="certificate-button"
-                            target="_blank"
+                        <button
+                            type="button"
+                            class="certificate-button view-cert"
+                            data-href="assets/certificates/virtualization-cloud-computing.pdf"
                         >
                             View Certificate
-                        </a>
+                        </button>
                     </article>
 
                     <article class="certificate-card">
@@ -153,13 +141,13 @@
                             PEM Consult with support from GIZ
                         </p>
 
-                        <a
-                            href="assets/certificates/design-thinking.pdf"
-                            class="certificate-button"
-                            target="_blank"
+                        <button
+                            type="button"
+                            class="certificate-button view-cert"
+                            data-href="assets/certificates/design-thinking.pdf"
                         >
                             View Certificate
-                        </a>
+                        </button>
                     </article>
 
                     <article class="certificate-card">
@@ -175,13 +163,13 @@
                             GFS Business Development Services
                         </p>
 
-                        <a
-                            href="assets/certificates/performance-management.pdf"
-                            class="certificate-button"
-                            target="_blank"
+                        <button
+                            type="button"
+                            class="certificate-button view-cert"
+                            data-href="assets/certificates/performance-management.pdf"
                         >
                             View Certificate
-                        </a>
+                        </button>
                     </article>
 
                     <article class="certificate-card">
@@ -199,13 +187,13 @@
                             Ministry of Commerce, People's Republic of China
                         </p>
 
-                        <a
-                            href="assets/certificates/green-energy-standardization.pdf"
-                            class="certificate-button"
-                            target="_blank"
+                        <button
+                            type="button"
+                            class="certificate-button view-cert"
+                            data-href="assets/certificates/green-energy-standardization.pdf"
                         >
                             View Certificate
-                        </a>
+                        </button>
                     </article>
 
                 </div>
@@ -226,31 +214,5 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        const gate = document.getElementById('certificateGate');
-        const content = document.getElementById('certificateContent');
-        const passwordInput = document.getElementById('certificatePassword');
-        const unlockBtn = document.getElementById('certificateUnlockBtn');
-        const errorText = document.getElementById('certificateError');
-
-        const correctPassword = 'omar2026';
-
-        function unlockCertificates() {
-            if (passwordInput.value === correctPassword) {
-                gate.classList.add('hidden');
-                content.classList.remove('hidden');
-            } else {
-                errorText.textContent = 'Incorrect password. Please try again.';
-                passwordInput.value = '';
-            }
-        }
-
-        unlockBtn.addEventListener('click', unlockCertificates);
-        passwordInput.addEventListener('keydown', function (event) {
-            if (event.key === 'Enter') {
-                unlockCertificates();
-            }
-        });
-    </script>
     </body>
 </html>

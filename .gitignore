@@ -1,0 +1,9 @@
+# Node
+node_modules/
+.env
+
+# Protected certificates - keep them out of the public repo
+protected_certs/
+
+# VS Code
+.vscode/

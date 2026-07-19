@@ -78,3 +78,39 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+// Certificate view gate (per-button) using server-side auth endpoint.
+document.addEventListener("DOMContentLoaded", function () {
+    async function handleViewClick(e) {
+        const btn = e.currentTarget;
+        const href = btn.getAttribute('data-href');
+        if (!href) return;
+
+        const attempt = prompt('Enter password to view certificate:');
+        if (attempt === null) return;
+
+        try {
+            const resp = await fetch('/auth', {
+                method: 'POST',
+                credentials: 'include',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ password: attempt })
+            });
+
+            if (resp.ok) {
+                // open protected route that streams the file using the server session
+                const filename = encodeURIComponent(href.split('/').pop());
+                window.open(`/cert/${filename}`, '_blank', 'noopener');
+            } else {
+                alert('Incorrect password.');
+            }
+        } catch (err) {
+            console.error(err);
+            alert('Error contacting server.');
+        }
+    }
+
+    document.querySelectorAll('.view-cert').forEach(function (btn) {
+        btn.addEventListener('click', handleViewClick);
+    });
+});
