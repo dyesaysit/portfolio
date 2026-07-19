@@ -1357,6 +1357,66 @@ button {
    FOOTER
 ======================================== */
 
+.certificate-gate {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 32px 20px;
+    background: linear-gradient(135deg, #061a2e 0%, #0a2d53 100%);
+    color: var(--white);
+}
+
+.certificate-gate-card {
+    width: min(100%, 460px);
+    padding: 36px 30px;
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+.certificate-gate-card h2 {
+    margin: 8px 0 10px;
+    color: var(--white);
+    font-size: 1.8rem;
+}
+
+.certificate-gate-card p {
+    color: rgba(255,255,255,0.8);
+}
+
+.certificate-gate-card input {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px 14px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    color: var(--navy-color);
+}
+
+.certificate-gate-card button {
+    margin-top: 12px;
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--primary-color);
+    color: var(--white);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.certificate-error {
+    margin-top: 12px;
+    color: #ffd1d1 !important;
+    font-size: 0.92rem;
+}
+
+.certificate-content.hidden,
+.certificate-gate.hidden {
+    display: none;
+}
+
 .site-footer {
     padding: 23px 0;
     color: rgba(255, 255, 255, 0.68);

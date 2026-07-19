@@ -19,6 +19,18 @@
 </head>
 
 <body>
+<div id="certificateGate" class="certificate-gate">
+    <div class="certificate-gate-card">
+        <p class="section-label">Private Section</p>
+        <h2>Certificates Access</h2>
+        <p>Please enter the password to view certificates.</p>
+        <input type="password" id="certificatePassword" placeholder="Enter password" />
+        <button type="button" id="certificateUnlockBtn">Unlock</button>
+        <p id="certificateError" class="certificate-error" aria-live="polite"></p>
+    </div>
+</div>
+
+<div id="certificateContent" class="certificate-content hidden">
 <header class="site-header">
     <nav class="navbar container">
         <a href="index.html" class="logo">
@@ -214,5 +226,31 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        const gate = document.getElementById('certificateGate');
+        const content = document.getElementById('certificateContent');
+        const passwordInput = document.getElementById('certificatePassword');
+        const unlockBtn = document.getElementById('certificateUnlockBtn');
+        const errorText = document.getElementById('certificateError');
+
+        const correctPassword = 'omar2026';
+
+        function unlockCertificates() {
+            if (passwordInput.value === correctPassword) {
+                gate.classList.add('hidden');
+                content.classList.remove('hidden');
+            } else {
+                errorText.textContent = 'Incorrect password. Please try again.';
+                passwordInput.value = '';
+            }
+        }
+
+        unlockBtn.addEventListener('click', unlockCertificates);
+        passwordInput.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                unlockCertificates();
+            }
+        });
+    </script>
     </body>
 </html>
