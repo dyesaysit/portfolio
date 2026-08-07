@@ -73,6 +73,11 @@ app.post('/logout', function (req, res) {
   });
 });
 
+// Custom 404 page
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, '404.html'));
+});
+
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
   console.log(`Protected certificates directory: ${PROTECTED_DIR}`);
