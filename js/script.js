@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (resp.ok) {
                 // open protected route that streams the file using the server session
                 const filename = encodeURIComponent(href.split('/').pop());
-                window.open(`/cert/${filename}`, '_blank', 'noopener');
+                window.location.href = `/cert/${filename}`;
             } else {
                 alert('Incorrect password.');
             }
