@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://omar.gambotai.com/</loc>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://omar.gambotai.com/about.html</loc>
+    </url>
+
+    <url>
+        <loc>https://omar.gambotai.com/experience.html</loc>
+    </url>
+
+    <url>
+        <loc>https://omar.gambotai.com/projects.html</loc>
+    </url>
+
+    <url>
+        <loc>https://omar.gambotai.com/skills.html</loc>
+    </url>
+
+    <url>
+        <loc>https://omar.gambotai.com/certificates.html</loc>
+    </url>
+
+    <url>
+        <loc>https://omar.gambotai.com/education.html</loc>
+    </url>
+
+    <url>
+        <loc>https://omar.gambotai.com/contact.html</loc>
+    </url>
+
+</urlset>
